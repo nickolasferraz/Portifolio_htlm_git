@@ -12,15 +12,17 @@ header.innerHTML=`
 navbar.appendChild(header);
 
 
-let contador = 0;
-    const box = document.querySelector('.container');
-    const imagens = document.querySelectorAll('.container img'); // Seleciona todas as imagens
+let slideIndex = 0;
+const slides = document.getElementsByClassName("mySlides");
 
-    setInterval(() => {
-        contador++;
-        if (contador >= imagens.length) {
-            contador = 0; // Reinicia o contador ao chegar ao fim
-        }
-        // Ajusta o translateX para mostrar uma imagem de cada vez
-        box.style.transform = `translateX(${-contador * 1250}px)`;
-    }, 2000);
+function showSlides() {
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; // Oculta todas as imagens
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1} // Volta ao primeiro slide se necessário
+    slides[slideIndex - 1].style.display = "block"; // Mostra a imagem atual
+    setTimeout(showSlides, 2000); // Muda a imagem a cada 2 segundos
+}
+
+showSlides(); // Inicializa o carrossel
