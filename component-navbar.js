@@ -2,7 +2,7 @@ const navbar= document.querySelector('.nav_bar');
 let header=document.createElement('nav');
 header.innerHTML=`
     <ul class="nav-list">
-        <li><button>Home</button></li>
+        <img id=logo src=./img/logo.png>
         <li><button>Ingressos</button></li>
         <li><button>Contato</button></li>
         <li><button>Imagens</button></li>

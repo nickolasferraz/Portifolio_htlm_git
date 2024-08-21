@@ -4,83 +4,79 @@
     box-sizing: border-box;
 }
 
+.container{
+    background-color:rgb(rgb(144, 184, 157), green, blue);
+}
+
 .nav-list {
     margin-left: 0;
     list-style: none;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: 20px;
+    height: 100px;
+    margin: 10px;
 }
 
-.content{
-    height: 520px;
-    width: 935px;
-    border-radius: 20px;
-    overflow: hidden;
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
+.nav-list img{
+    width: 200px ;
 }
 
-.navigation{
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translate(-50%);
-    display: flex;
+.container {
+	padding: 2rem;
 }
 
-.bar{
-    width: 70px;
-    height: 20px;
-    border: 2px solid #fff;
-    margin: 6px;
-    border-radius: 5px;
-    cursor: pointer;
+.slider-wrapper {
+	position: relative;
+	max-width: 50rem;
+	margin: 0 auto;
 }
 
-.bar:hover{
-    background-color: #fff;
+.slider {
+	display: flex;
+	aspect-ratio: 16 / 9;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+	border-radius: 0.5rem;
+	-ms-overflow-style: none; /* Hide scrollbar IE and Edge */
+	scrollbar-width: none; /* Hide scrollbar Firefox */
 }
 
-input[type="radio"]{
-    display: none;
-}
-.slides{
-    display: flex;
-    width: 500%;
-    height: 500%;
+/* Hide scrollbar for Chrome, Safari and Opera */
+.slider::-webkit-scrollbar {
+	display: none;
 }
 
-.slide{
-    width: 20%;
-    transition: .6s;
+.slider img {
+	flex: 1 0 100%;
+	scroll-snap-align: start;
+	object-fit: cover;
 }
 
-.slide img{
-    width: 100%;
-    height: 100%;
+.slider-nav {
+	display: flex;
+	column-gap: 1rem;
+	position: absolute;
+	bottom: 1.25rem;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1;
 }
 
-
-#slide1:checked ~ .s1{
-    margin-left: 0;
-}
-#slide2:checked ~ .s1{
-    margin-left: -20%;
-}
-#slide3:checked ~ .s1{
-    margin-left: -40%;
-}
-#slide4:checked ~ .s1{
-    margin-left: -60%;
-}
-#slide5:checked ~ .s1{
-    margin-left: -80%;
+.slider-nav a {
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 50%;
+	background-color: #fff;
+	opacity: 0.75;
+	transition: opacity ease 250ms;
 }
 
+.slider-nav a:hover {
+	opacity: 1;
+}
 
 
 .nav-list li button {
